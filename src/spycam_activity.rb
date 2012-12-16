@@ -1,6 +1,7 @@
 require 'ruboto/activity'
 require 'ruboto/widget'
 require 'spycam_server'
+require 'ruboto/util/toast'
 
 import android.util.Log
 import android.view.Surface
@@ -11,6 +12,7 @@ ruboto_import_widget :SurfaceView, "android.view"
 
 class SpycamActivity
   def on_create(bundle)
+    toast "ver: #{Ruboto::VERSION}"
     super
     rotation = {
         Surface::ROTATION_0 => 0,Surface::ROTATION_90 => 90,Surface::ROTATION_180 => 180,Surface::ROTATION_270 => 270
